@@ -10,7 +10,11 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-
+.container {
+    width: 320px;
+    height: 568px;
+    position: relative;
+}
 .poem{
 	position: absolute;
 	top: 0;
