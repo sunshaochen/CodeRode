@@ -6,10 +6,14 @@
 		this.cacheVal();
 		this.resizeCanvas();
 		this.paint();
+		this.flashCursor();
 	};
 
 	CodeRood.prototype.cacheVal = function(){
 		this.$canvas = document.querySelector('#mainCanvas');
+
+		this.$cursor = document.querySelector('#cursor');
+
 		this.context = this.$canvas.getContext('2d');
 		this.color = '#00BF00'; // 字体颜色
 		this.lastTime = 0;
@@ -17,6 +21,17 @@
 		this.stars = {};
 		this.moon;
 	};	
+	CodeRood.prototype.flashCursor = function(){
+		var _this = this;
+		setInterval(function(){
+			_this.$cursor.style.display != 'none'?
+				_this.$cursor.style.display='none':
+				_this.$cursor.style.display = 'block';
+		}, 600)
+		
+	};
+	CodeRood.prototype.loadPoem = function(){
+	};
 
 	CodeRood.prototype.resizeCanvas = function(){
 		// this.$canvas.width = document.body.clientWidth;

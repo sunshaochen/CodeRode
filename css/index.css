@@ -1,3 +1,6 @@
+*{
+	box-sizing: border-box;
+}
 html{
 	height: 100%;
 }
@@ -9,11 +12,25 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-family: 微软雅黑;
 }
 .container {
     width: 320px;
     height: 568px;
     position: relative;
+}
+#consoleBg{
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	color: #00BF00;
+}
+#cursor{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-weight: bold;
+	color: #00BF00;
 }
 .poem{
 	position: absolute;
@@ -22,5 +39,28 @@ body{
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	border: 1px solid #ff0;
+	/*border: 1px solid #ff0;*/
+	color: #00BF00;
+}
+
+.index{
+	position: absolute;
+	right: 10px;
+	font-weight: normal;
+    text-align: right;
+	margin: 0;
+}
+.poem h2{
+    top: 66px;
+}
+.poem h3{
+    top: 96px;
+}
+
+.poem ul{
+    top: 130px;
+    width: 184px;
+    font-size: 18px;
+    list-style: none;
+    text-align: left
 }

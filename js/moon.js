@@ -1,7 +1,7 @@
 ;(function(){
 	window.Moon = function(){
 		this.centerPos = {x:80,y:90};	
-		this.radis = 5;
+		this.radis = 6;
 		this.points = [];
 		this.radisLength = 10*this.radis;
 	};
