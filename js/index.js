@@ -46,9 +46,9 @@
 		// 	code.paint(this.context);
 		// }
 
-		this.drawStar();
 		this.moon = new Moon();
 		this.moon.createPoints();
+		this.drawStar();
 		this.drawMoon();
 		// this.us = new Us();
 		// this.us.createPoints();
@@ -76,6 +76,17 @@
 	// };
 
 	CodeRood.prototype.drawMoon = function(){
+		if(this.moon.centerPos.y>=120){
+			this.moon.centerPos.y -= 20;
+		}
+		if(this.moon.centerPos.x>=80){
+			this.moon.centerPos.x -=4;
+		}
+		if(this.moon.radius>=6){
+			this.moon.radius -= 0.2;
+		}
+		console.log(this.moon.centerPos.y);
+		this.moon.createPoints();
 		var points = this.moon.points;                                   
 		for (var i = 0; i < points.length; i++) {
 			var code = new CodeSprite({x:points[i]['x'],y:points[i]['y']})
@@ -84,7 +95,7 @@
 		this.context.save();
 		this.context.fillStyle='#000';
 		this.context.beginPath();
-		this.context.arc(this.moon.centerPos.x+this.moon.radisLength, this.moon.centerPos.y, this.moon.radisLength/1.3, 0, Math.PI*2);
+		this.context.arc(this.moon.centerPos.x+this.moon.radiusLength, this.moon.centerPos.y, this.moon.radiusLength/1.3, 0, Math.PI*2);
 		// this.context.stroke();
 		this.context.fill();
 		this.context.restore();
@@ -92,7 +103,7 @@
 		this.context.strokeStyle="#000";
 		this.context.lineWidth = 100;
 		this.context.beginPath();
-		this.context.arc(this.moon.centerPos.x, this.moon.centerPos.y, this.moon.radisLength+50, 0, Math.PI*2);
+		this.context.arc(this.moon.centerPos.x, this.moon.centerPos.y, this.moon.radiusLength+50, 0, Math.PI*2);
 		this.context.stroke();
 		this.context.restore();
 

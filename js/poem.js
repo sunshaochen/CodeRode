@@ -58,8 +58,6 @@
 			el.innerText = '';
 			var _this = this;
 			var interval = setInterval(function(){
-				console.log(el)
-				console.log(text)
 				var addVal = text.substring(index, index+1);
 				el.innerText += addVal;
 				index++;
@@ -72,7 +70,7 @@
 			},time? time: 150);
 		},
 		titleKey : function(){
-			this.write(this.$consoleBg,'echo>>title',this.titleWriter.bind(this));sf
+			this.write(this.$consoleBg,'echo>>title',this.titleWriter.bind(this));
 		},
 		titleWriter : function(){
 			this.write(this.$title,this.myPoem['title'],this.authorKey.bind(this));
